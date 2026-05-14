@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: edtech_postgres
+    environment:
+      POSTGRES_DB: edtech_db
+      POSTGRES_USER: edtech_user
+      POSTGRES_PASSWORD: edtech_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - edtech_pgdata:/var/lib/postgresql/data
+
+volumes:
+  edtech_pgdata:
